@@ -1,0 +1,24 @@
+citHeader("To cite planscorer in publications use:")
+
+bibentry(
+    bibtype = "Manual",
+    title = "{planscorer}: Score Redistricting Plans with PlanScore",
+    author = c(
+    person(given = "Christopher T.",
+           family = "Kenny",
+           role = c("aut", "trl", "cre"),
+           email = "christopherkenny@fas.harvard.edu",
+           comment = c("R port", ORCID = "0000-0002-9386-6860")),
+    person(given = "Michal",
+           family = "Migurski",
+           role = c("aut"),
+           comment = c("python original, https://github.com/PlanScore/PlanScore-CLI")),
+    person(given = "Cory",
+           family = "McCartan",
+           role = "art")
+           ),
+    year = "2024",
+    note = "R package",
+    key = "planscorer",
+    url = "https://christophertkenny.com/planscorer/"
+)
