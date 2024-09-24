@@ -1,6 +1,6 @@
 Package: planscorer
 Title: Score Redistricting Plans with 'PlanScore'
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: c(
     person(given = "Christopher T.",
            family = "Kenny",
@@ -23,15 +23,17 @@ Description: Provides access to the 'PlanScore' Application Programming Interfac
     website.
 License: MIT + file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2.9000
 Imports: cli, curl, dplyr, fs, httr2, jsonlite, purrr, readr, rlang,
-        sf, stringr, tibble, tidyr
-URL: http://christophertkenny.com/planscorer/
+        sf, stringr, tibble, tidyr, webshot2
+URL: http://christophertkenny.com/planscorer/,
+        https://github.com/christopherkenny/planscorer
+BugReports: https://github.com/christopherkenny/planscorer/issues
 Suggests: httptest2, spelling, testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Language: en-US
 NeedsCompilation: no
-Packaged: 2024-02-22 19:26:01 UTC; chris
+Packaged: 2024-09-24 14:38:45 UTC; chris
 Author: Christopher T. Kenny [aut, trl, cre] (R port,
     <https://orcid.org/0000-0002-9386-6860>),
   Michal Migurski [aut] (python original,
@@ -39,4 +41,4 @@ Author: Christopher T. Kenny [aut, trl, cre] (R port,
   Cory McCartan [art]
 Maintainer: Christopher T. Kenny <christopherkenny@fas.harvard.edu>
 Repository: CRAN
-Date/Publication: 2024-02-23 19:10:02 UTC
+Date/Publication: 2024-09-24 14:50:02 UTC

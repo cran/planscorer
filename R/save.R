@@ -14,7 +14,10 @@
 #' @examples
 #' url <- 'https://planscore.s3.amazonaws.com/uploads/20221127T213653.168557156Z/index.json'
 #' tf <- tempfile(fileext = '.json')
-#' ps_save(url, tf)
+#' try({ # relies on internet resource
+#'   ps_save(url, tf)
+#' })
+#'
 ps_save <- function(link, path, json = TRUE) {
   if (missing(link)) {
     cli::cli_abort('{.arg link} is required.')
