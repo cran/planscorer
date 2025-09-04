@@ -19,7 +19,7 @@
 #' @examplesIf planscorer::ps_has_key()
 #' # Requires API Key
 #' file <- system.file('extdata/null-plan-incumbency.geojson', package = 'planscorer')
-#' ps_upload_file(file)
+#' ps_upload_file(file, description = 'A test plan')
 ps_upload_file <- function(file, description = NULL, incumbents = NULL,
                            model_version = NULL, library_metadata = NULL,
                            temporary = TRUE) {
@@ -75,6 +75,7 @@ ps_upload_file <- function(file, description = NULL, incumbents = NULL,
     if (!is.null(description)) {
       j <- jsonlite::read_json(file)
       j <- purrr::prepend(j, values = c(description = description), before = 2)
+      file <- fs::file_temp(ext = '.geojson')
       jsonlite::write_json(j, file, auto_unbox = TRUE)
     }
 

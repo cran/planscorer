@@ -52,10 +52,10 @@ list of links to index and plan, on success
 Upload to PlanScore
 }
 \examples{
-\dontshow{if (planscorer::ps_has_key()) withAutoprint(\{ # examplesIf}
+\dontshow{if (planscorer::ps_has_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # Requires API Key
 file <- system.file('extdata/null-plan-incumbency.geojson', package = 'planscorer')
-ps_upload_file(file)
+ps_upload_file(file, description = 'A test plan')
 \dontshow{\}) # examplesIf}
 }
 \concept{upload}

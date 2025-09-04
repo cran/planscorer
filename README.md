@@ -5,12 +5,26 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/christopherkenny/planscorer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/christopherkenny/planscorer/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/christopherkenny/planscorer/workflows/R-CMD-check/badge.svg)](https://github.com/christopherkenny/planscorer/actions)
+[![planscorer status
+badge](https://christopherkenny.r-universe.dev/badges/planscorer)](https://christopherkenny.r-universe.dev/planscorer)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/planscorer)](https://CRAN.R-project.org/package=planscorer)
+![CRAN
+downloads](http://cranlogs.r-pkg.org/badges/grand-total/planscorer)
 <!-- badges: end -->
 
 `planscorer` offers an R interface to PlanScore.org’s API.
 
 ## Installation
+
+You can install the stable version of planscorer from CRAN with:
+
+``` r
+install.packages('planscorer')
+```
 
 You can install the development version of planscorer from
 [GitHub](https://github.com/) with:
@@ -50,17 +64,17 @@ To read the data results:
 ``` r
 ps_ingest(links)
 #> # A tibble: 2 × 62
-#>   district democratic_…¹ democ…² democ…³ repub…⁴ repub…⁵ us_pr…⁶ us_pr…⁷ distr…⁸
-#>   <chr>            <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <int>
-#> 1 1                 155.    29.9   0        445.    29.9     100     300       0
-#> 2 2                 379.    29.6   0.998    221.    29.6     500     300       1
-#> # … with 53 more variables: polsby_popper <dbl>, reock <dbl>,
-#> #   declination <dbl>, declination_absolute_percent_rank <dbl>,
+#>   district democratic_votes democratic_votes_sd democratic_wins republican_votes
+#>   <chr>               <dbl>               <dbl>           <dbl>            <dbl>
+#> 1 1                    155.                29.9           0                 445.
+#> 2 2                    379.                29.6           0.998             221.
+#> # ℹ 57 more variables: republican_votes_sd <dbl>, us_president_2016_dem <dbl>,
+#> #   us_president_2016_rep <dbl>, district_number <int>, polsby_popper <dbl>,
+#> #   reock <dbl>, declination <dbl>, declination_absolute_percent_rank <dbl>,
 #> #   declination_is_valid <dbl>, declination_positives <dbl>,
 #> #   declination_relative_percent_rank <dbl>, declination_sd <dbl>,
 #> #   efficiency_gap <dbl>, efficiency_gap_1_dem <dbl>,
-#> #   efficiency_gap_1_dem_sd <dbl>, efficiency_gap_1_rep <dbl>,
-#> #   efficiency_gap_1_rep_sd <dbl>, efficiency_gap_2_dem <dbl>, …
+#> #   efficiency_gap_1_dem_sd <dbl>, efficiency_gap_1_rep <dbl>, …
 ```
 
 To capture the outputted figures on the site:
@@ -68,6 +82,7 @@ To capture the outputted figures on the site:
 ``` r
 img <- 'man/figures/README-planscore.png'
 ps_capture(links, img)
+#> https://planscore.org/plan.html?temporary-bd7843f2-9dfa-4c80-9b63-3400e77dab18 screenshot completed
 #> [1] "man/figures/README-planscore.png"
 
 knitr::include_graphics(img)
